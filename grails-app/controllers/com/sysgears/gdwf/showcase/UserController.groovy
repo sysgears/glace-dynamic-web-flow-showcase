@@ -2,6 +2,7 @@ package com.sysgears.gdwf.showcase
 
 import com.sysgears.gdwf.annotation.FlowSetup
 import com.sysgears.gdwf.annotation.FlowState
+import org.springframework.orm.ObjectOptimisticLockingFailureException
 
 class UserController {
 
@@ -62,11 +63,16 @@ class UserController {
     @FlowState
     def saveUser() {
         activity {
-            if (flowScope.user.save()) {
-                flash.message = message(code: 'created.message', args: [message(code: "role.${flowScope.user.role}.label")])
-                redirect action: 'show', params: [id: flowScope.user.id]
-            } else {
-                flash.message = message(code: 'error.message')
+            try {
+                if (flowScope.user.save()) {
+                    flash.message = message(code: 'created.message', args: [message(code: "role.${flowScope.user.role}.label")])
+                    redirect action: 'show', params: [id: flowScope.user.id]
+                } else {
+                    flash.message = message(code: 'error.message')
+                    redirect action: 'list'
+                }
+            } catch (ObjectOptimisticLockingFailureException e) {
+                flash.message = message(code: 'concurrent.error.message')
                 redirect action: 'list'
             }
         }
