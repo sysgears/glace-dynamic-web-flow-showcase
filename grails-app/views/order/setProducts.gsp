@@ -8,7 +8,7 @@
 <body>
 
 <sitemesh:parameter name="flowEntityName" value="${message(code: 'order.label')}"/>
-<sitemesh:parameter name="entityName" value="${message(code: "flow.order.cart.label")}"/>
+<sitemesh:parameter name="entityName" value="${message(code: "flow.order.label")}"/>
 
 <sitemesh:parameter name="tip" value="${message(code: 'help.order.products.message')}"/>
 
