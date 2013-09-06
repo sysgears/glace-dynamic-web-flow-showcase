@@ -5,6 +5,8 @@ class Order implements Serializable {
     Address billingAddress
     Address shippingAddress
     List products
+    Date dateCreated
+    Date lastUpdated
 
     static hasMany = [products: Product]
 

@@ -7,6 +7,8 @@ class User implements Serializable {
     Address address
     Voucher voucher
     Role role
+    Date dateCreated
+    Date lastUpdated
 
     static constraints = {
         firstName blank: false

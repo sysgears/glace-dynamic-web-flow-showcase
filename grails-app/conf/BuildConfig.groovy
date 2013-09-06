@@ -50,5 +50,6 @@ grails.project.dependency.resolution = {
         compile ':fields:1.3'
         compile ':build-test-data:2.0.5'
         compile ':glace-dynamic-web-flow:0.1.0'
+        compile ":quartz:1.0-RC9"
     }
 }

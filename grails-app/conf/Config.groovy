@@ -90,3 +90,6 @@ log4j = {
 }
 
 grails.app.context = '/'
+
+testData.objectsCount = 10
+dbCleaner.minInstanceLifeCycleInMinutes = 30

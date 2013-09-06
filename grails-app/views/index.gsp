@@ -27,6 +27,8 @@
                 <dd><g:message code="controller.${c.logicalPropertyName}.description"/></dd>
             </g:each>
         </dl>
+        <p>For details, see showcase application source code
+            <a href="https://github.com/sysgears/glace-dynamic-web-flow-showcase">here</a></p>
     </div>
 
     <div class="span4">
